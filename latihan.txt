@@ -4,3 +4,4 @@ kegiatan:
 3. Edit file README.md
 4. Membuat file latihan.txt ke repository
 5. membuat brach pada main
+6. ini update baru pada branch sesi 2
