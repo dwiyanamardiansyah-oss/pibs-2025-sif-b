@@ -3,3 +3,4 @@ kegiatan:
 2. Edit file README.md
 3. Edit file README.md
 4. Membuat file latihan.txt ke repository
+5. membuat branch langsung saat komit 
