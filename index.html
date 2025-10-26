@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Mahasiswa - Muhammad Ardiansyah Dwiyana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 🔹 VIDEO BACKGROUND -->
+  <video autoplay muted loop id="background-video">
+    <source src="Best technology background video.mp4" type="video/mp4">
+    Browser Anda tidak mendukung video HTML5.
+  </video>
+
+  <!-- HEADER -->
+  <header>
+    <div class="profil-header">
+  <div class="profil-img">
+    <img src="2025-10-21 at 03.03.08_af3cea0c.jpg" alt="Foto Profil">
+  </div>
+  <div>
+    <h1>Profil Mahasiswa</h1>
+    <p>Muhammad Ardiansyah Dwiyana | Sistem Informasi</p>
+  </div>
+</div>
+
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="#" class="active" data-target="biodata">Biodata</a></li>
+      <li><a href="#" data-target="pendidikan">Pendidikan</a></li>
+      <li><a href="#" data-target="pengalaman">Pengalaman</a></li>
+      <li><a href="#" data-target="keahlian">Keahlian</a></li>
+      <li><a href="#" data-target="kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <section id="biodata">
+      <h2>Biodata</h2>
+      <p><strong>NIM:</strong> 2024081045</p>
+      <p><strong>Nama:</strong> Muhammad Ardiansyah Dwiyana</p>
+      <p><strong>Program Studi:</strong> Sistem Informasi</p>
+      <p><strong>Tanggal Lahir:</strong> 08 Juli 2007</p>
+      <p><strong>Tempat Lahir:</strong> Tanggerang</p>
+    </section>
+
+    <section id="pendidikan" hidden>
+      <h2>Pendidikan</h2>
+      <ul>
+        <li>Universitas — Sistem Informasi (2021 - Sekarang)</li>
+        <li>SMA Negeri — Jurusan IPA (2018 - 2021)</li>
+      </ul>
+    </section>
+
+    <section id="pengalaman" hidden>
+      <h2>Pengalaman</h2>
+      <ol>
+        <li>Membangun website e-commerce berbasis Laravel</li>
+        <li>Analisis kasus manajemen di PT Sanskara Karya Internasional</li>
+      </ol>
+    </section>
+
+    <section id="keahlian" hidden>
+      <h2>Keahlian</h2>
+      <ul>
+        <li>Laravel, PHP, MySQL</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Desain UI & Infografis</li>
+      </ul>
+    </section>
+
+    <section id="kontak" hidden>
+      <h2>Kontak</h2>
+      <p>Email: <a href="mailto:dwiyanamardiansyah@gmail.com"></a>dwiyanamardiansyah@gmail.com</p>
+      <p>GitHub: <a href="#">github.com/ardiansyah</a></p>
+    </section>
+  </main>
+
+  <!-- ASIDE -->
+  <aside>
+    <h3>Hobi</h3>
+    <ul>
+      <li>Bulutangkis</li>
+      <li>Sepak Bola</li>
+      <li>Pemrograman</li>
+    </ul>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="left">
+      <p>Twitter: @ardidyann</p>
+      <p>FB: @bagusramadhan</p>
+      <p>IG: @ardidynn</p>
+    </div>
+    <div class="center-copy">
+      <p>&copy;  2025 Muhammad Ardiansyah Dwiyana — All Rights Reserved </p>
+    </div>
+     <div class="right">
+     <p><strong> @ardidyan</strong> </p>
+    <small>Kerja Pagi Pulang Pancarona </small>
+  </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const links = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("main section");
+
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        links.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+
+        const target = link.getAttribute("data-target");
+        sections.forEach(sec => sec.hidden = sec.id !== target);
+      });
+    });
+  </script>
+</body>
+</html>

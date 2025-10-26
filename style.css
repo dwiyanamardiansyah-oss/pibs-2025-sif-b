@@ -1,0 +1,252 @@
+:root {
+  --grad1: #6a11cb;
+  --grad2: #2575fc;
+  --bg: #f4f7fe;
+  --text: #fff;
+  --muted: #ddd;
+  --card: rgba(255, 255, 255, 0.1);
+}
+
+/* 🌈 Background animasi lembut bergerak */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #00c6ff, #0072ff);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🔹 VIDEO BACKGROUND FULLSCREEN */
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === FRAME STYLE UNTUK SEMUA CARD === */
+header, nav, main, aside, footer {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  margin: 1rem;
+  color: white;
+  transition: 0.3s ease;
+}
+
+/* 🌟 Warna lembut transparan berbeda untuk tiap bagian */
+header {
+  background: linear-gradient(135deg, rgba(106,17,203,0.5), rgba(37,117,252,0.4));
+}
+
+nav {
+  background: linear-gradient(135deg, rgba(106,17,203,0.5), rgba(0,198,255,0.3));
+}
+
+main {
+  background: linear-gradient(135deg, rgba(0,114,255,0.3), rgba(106,17,203,0.5));
+}
+
+aside {
+  background: linear-gradient(135deg, rgba(0,198,255,0.3), rgba(106,17,203,0.3));
+}
+
+footer {
+  background: linear-gradient(135deg, rgba(0,114,255,0.35), rgba(37,117,252,0.3));
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+/* ======= PROFIL HEADER ======= */
+.profil-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(30, 30, 60, 0.5), rgba(80, 0, 150, 0.5));
+  padding: 20px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  position: relative;
+  z-index: 3;
+}
+
+/* ======= FOTO PROFIL ======= */
+.profil-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden; /* penting agar gambar bulat sempurna */
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 25px rgba(150, 100, 255, 0.4);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.profil-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Efek saat hover */
+.profil-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(11, 92, 255, 0.7);
+}
+
+
+/* NAV */
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  display: block;
+  padding: 0.8rem 1rem;
+  color: #eee;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  transform: scale(1.03);
+}
+
+/* MAIN */
+main {
+  padding: 1.2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main h2 {
+  color: #00c6ff;
+  border-bottom: 2px solid rgba(255,255,255,0.4);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ASIDE */
+aside {
+  padding: 1.2rem;
+}
+
+aside h3 {
+  color: #7edfff;
+  margin-bottom: 0.6rem;
+}
+
+/* FOOTER */
+footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #eee;
+  position: relative;
+}
+
+footer .center-copy {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 📱 SMARTPHONE */
+@media (max-width: 600px) {
+  nav ul { flex-direction: column; }
+}
+
+/* 📲 TABLET PORTRAIT */
+@media (min-width: 601px) and (max-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* 💻 TABLET LANDSCAPE */
+@media (min-width: 769px) and (max-width: 992px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "aside aside"
+      "footer footer";
+    grid-template-columns: 25% 75%;
+    gap: 10px;
+  }
+
+  header { grid-area: header; }
+  nav { grid-area: nav; }
+  main { grid-area: main; }
+  aside { grid-area: aside; }
+  footer { grid-area: footer; }
+
+  nav ul { flex-direction: column; }
+}
+
+/* 🖥️ DESKTOP */
+@media (min-width: 993px) {
+  body {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "nav main aside"
+      "footer footer footer";
+    grid-template-columns: 25% 50% 25%;
+    gap: 10px;
+  }
+
+  header { grid-area: header; }
+  nav { grid-area: nav; }
+  main { grid-area: main; }
+  aside { grid-area: aside; }
+  footer { grid-area: footer; }
+
+  nav ul { flex-direction: column; }
+}
